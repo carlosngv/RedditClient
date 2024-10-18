@@ -1,0 +1,153 @@
+/* ? https://www.youtube.com/watch?v=5HtRcMSO1Ro&ab_channel=freeCodeCampEspa%C3%B1ol */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+    .card {
+        @apply bg-[#062726] grid p-3 bg-opacity-50 rounded-lg text-white mb-5 max-[430px]:min-w-[500px] max-[430px]:max-w-[500px]
+    }
+
+    .toggle-sidebar-btn {
+        @apply  bg-[#062726] p-2 rounded-md sm:hidden max-sm:relative min-[360px]:right-[-27.5rem]  max-sm:right-[-29rem] max-sm:top-[-6rem]
+    }
+
+    .responsive-sidebar {
+        @apply h-full  bg-[#062726] max-md:w-[10rem] min-[1024px]:w-[25rem] md:w-[15rem] max-sm:fixed max-sm:top-0 max-sm:left-[-180px] max-sm:h-full max-sm:w-full max-sm:max-w-[180px] max-sm:transition max-sm:duration-150 max-sm:ease-linear
+    }
+
+    .sidebar-title {
+        @apply font-mono font-medium p-4 max-msm:text-lg text-xl lg:text-2xl
+    }
+
+    .sidebar-is-active {
+        @apply max-sm:left-0
+    }
+
+    .sidebar-item {
+        @apply mb-4 mx-2 hover:bg-[#334140] w-[90%] p-3 rounded-md
+    }
+
+    .footer {
+        /* @apply bg-slate-800 absolute w-[100%] bottom-0 left-0 */
+        /* @apply bg-slate-800 w-full self-end sm:absolute */
+        @apply bg-slate-800 w-[100%] h-[100%] col-span-4
+    }
+
+    .searchbox {
+        @apply bg-white w-full mt-4 text-black ring-white p-4 outline-white
+            max-msm:p-2 rounded-lg
+    }
+
+    .sidebar-item-text {
+        @apply text-xl max-msm:text-base w-[100%]
+    }
+
+    .layout-grid {
+        @apply grid grid-rows-[1fr_auto] max-sm:grid-cols-1 max-msm:grid-cols-1
+    }
+
+    .content-grid {
+        @apply col-span-2 p-4
+    }
+
+    .subreddit-title {
+        @apply font-bold text-3xl mb-[2rem] max-msm:text-2xl
+    }
+
+    .subreddit-post-title {
+        @apply font-bold
+    }
+
+    .subreddit-img-container {
+        @apply grid w-full min-h-[12rem] p-4 place-items-center
+    }
+
+    .post-img {
+        @apply  w-[80%] rounded-lg max-h-[24rem] object-cover object-center
+    }
+
+    .search-button {
+        @apply w-full bg-slate-800 p-3 rounded-lg hover:bg-slate-700 font-medium text-2xl
+    }
+
+    .search-button-sidebar {
+        @apply w-[80%] min-[1024px]:w-[90%] ml-5 bg-slate-800 p-3 rounded-lg hover:bg-slate-700 font-medium min-[768px]:text-lg min-[360px]:text-base
+    }
+    /* .modal-style {
+        @apply bg-[#1c4845] text-black bottom-0 left-0 right-0 top-0
+    } */
+}
+
+* {
+    font-family: "Roboto", sans-serif;
+    font-weight: 100;
+    font-style: normal;
+}
+
+body {
+    background-color: #5A189A;
+    color: #fff;
+}
+
+.ReactModalPortal > div{
+    opacity: 0;
+}
+
+.ReactModalPortal .ReactModal__Overlay {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    transition: opacity .2s ease-in-out;
+    z-index: 999;
+}
+
+
+.overlay-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgb(63, 57, 69);
+}
+
+.ReactModalPortal .ReactModal__Overlay--after-open {
+    opacity: 1;
+}
+
+.ReactModalPortal .ReactModal__Overlay--before-close {
+    opacity: 0;
+}
+
+.modal {
+    background: #1e1c21;
+    border-radius: 1rem;
+    color: #fff;
+    /* display: inline; */
+    height: 20rem;
+    width: 40rem;
+    outline: none;
+    padding: 3rem;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+@media screen and (max-width: 431px) {
+
+    .modal {
+        height: 10rem;
+        width: 16rem;
+        padding: 0.8rem;
+    }
+
+    .modal h1 {
+        font-size: 1.3rem;
+    }
+}
