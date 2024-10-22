@@ -8,15 +8,17 @@ export interface Subreddit {
 }
 
 export interface SubredditsState {
-   isLoading: boolean,
-   activeSubreddit: Subreddit
-   subreddits: Subreddit[]
+   isLoading: boolean;
+   activeSubreddit: Subreddit;
+   subreddits: Subreddit[];
+   errorFound?: string;
 }
 
 const initialState: SubredditsState = {
    isLoading: true,
    activeSubreddit: { subreddit: '', children: [] },
    subreddits: [],
+   errorFound: undefined,
 }
 export const subRedditsSlice = createSlice({
    name: 'subReddits',
@@ -31,6 +33,7 @@ export const subRedditsSlice = createSlice({
          state.isLoading = false;
       },
       addSubreddit: ( state, { payload } ) => {
+         state.errorFound = undefined;
          // ! 10 subreddits max
          const currentSubreddit = state.subreddits.find( sr => sr.subreddit === payload.subreddit );
          // ? Refresh subreddit validation
@@ -45,6 +48,7 @@ export const subRedditsSlice = createSlice({
          state.isLoading = false;
       },
       deleteSubreddit: ( state, { payload }) => {
+
          console.log({payload})
          state.subreddits = state.subreddits.filter( sr => sr.subreddit !== payload );
 
@@ -59,9 +63,15 @@ export const subRedditsSlice = createSlice({
       clearSubreddits: ( state ) => {
          state.subreddits = [];
       },
-      capturingSubredditError: ( state ) => {
+      onCapturingSubredditError: ( state, { payload } ) => {
          state.isLoading = false;
+         state.errorFound = payload;
+         state.activeSubreddit = { subreddit: '', children: [] };
+      },
+      onClearErrorMessage: ( state ) => {
+         state.errorFound = undefined;
       }
+
    }
 });
 
@@ -70,6 +80,6 @@ export const {
    addingNewSubreddit,
    clearSubreddits,
    setActiveSubreddit,
-   capturingSubredditError,
+   onCapturingSubredditError,
    deleteSubreddit,
 } = subRedditsSlice.actions;

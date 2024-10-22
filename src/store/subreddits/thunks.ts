@@ -2,7 +2,7 @@
 import subredditApi from "../../helpers/subredditApi";
 import { RedditData, SubredditChildData } from "../../interfaces/subreddit.interface";
 import { AppDispatch } from "../store";
-import { addingNewSubreddit, addSubreddit, capturingSubredditError, setActiveSubreddit } from "./subredditsSlice"
+import { addingNewSubreddit, addSubreddit, onCapturingSubredditError, setActiveSubreddit } from "./subredditsSlice"
 
 
 export const startRedditSearch = ( subredditInput: string ) => {
@@ -30,7 +30,7 @@ export const startRedditSearch = ( subredditInput: string ) => {
 
         } catch (error) {
             console.log( { error } )
-            dispatch(capturingSubredditError());
+            dispatch(onCapturingSubredditError( `${ error }`));
         }
 
     }

@@ -3,6 +3,7 @@ import { Footer } from './components/Footer'
 import { Sidebar } from './components/Sidebar'
 import { useAppSelector } from '../hooks/hooks';
 import { Grid } from './components/Grid';
+import { ErrorPage } from '../shared/pages/ErrorPage';
 
 export const Layout = () => {
 
@@ -19,20 +20,22 @@ export const Layout = () => {
 
             !isLoading
             ? (
-                <div className="h-screen max-sm:pt-32 layout-grid">
+                activeSubreddit.subreddit !== '' ?
+                    (<div className="h-screen max-sm:pt-32 layout-grid">
 
-                    <button
-                        className="toggle-sidebar-btn w-[4rem] h-[3rem] hover:bg-[#334140]"
-                        onClick={ onToggleSidebar }
-                    ><i className="fa-solid fa-bars"></i></button>
+                        <button
+                            className="toggle-sidebar-btn w-[4rem] h-[3rem] hover:bg-[#334140]"
+                            onClick={ onToggleSidebar }
+                        ><i className="fa-solid fa-bars"></i></button>
 
-                    <Sidebar onToggle={ toggleSidebar } />
+                        <Sidebar onToggle={ toggleSidebar } />
 
-                    <Grid activeSubreddit={ activeSubreddit } />
+                        <Grid activeSubreddit={ activeSubreddit } />
 
-                    <Footer />
+                        <Footer />
 
-                </div>
+                    </div>)
+                : <ErrorPage />
             )
             : (
                 <div
