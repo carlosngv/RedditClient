@@ -18,6 +18,8 @@ export default {
       screens: {
         'tablet': '900px',
         'msm':'431px',
+        '3xl': '1770px',
+        '4xl': '2000px',
       }
     },
   },

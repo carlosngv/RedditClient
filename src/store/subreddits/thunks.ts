@@ -1,12 +1,14 @@
+
 import subredditApi from "../../helpers/subredditApi";
 import { RedditData, SubredditChildData } from "../../interfaces/subreddit.interface";
-import { AppDispatch } from "../store";
+import { AppDispatch, RootState } from "../store";
 import { addingNewSubreddit, addSubreddit, capturingSubredditError, setActiveSubreddit } from "./subredditsSlice"
 
 
 export const startRedditSearch = ( subredditInput: string ) => {
 
-    return async ( dispatch: AppDispatch ) => {
+    return async ( dispatch: AppDispatch  ) => {
+
         dispatch( addingNewSubreddit() );
 
         subredditInput = subredditInput.trim().replace( ' ', '' );
@@ -22,6 +24,8 @@ export const startRedditSearch = ( subredditInput: string ) => {
             const newSubreddit = { subreddit: subredditInput, children: subredditChildren };
             dispatch( addSubreddit( newSubreddit ) );
             dispatch( setActiveSubreddit( newSubreddit ));
+
+
 
 
         } catch (error) {

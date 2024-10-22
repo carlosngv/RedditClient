@@ -32,7 +32,7 @@
     .footer {
         /* @apply bg-slate-800 absolute w-[100%] bottom-0 left-0 */
         /* @apply bg-slate-800 w-full self-end sm:absolute */
-        @apply bg-slate-800 w-[100%] h-[100%] col-span-4
+        @apply bg-slate-800 w-[100%] h-[100%] col-span-4 2xl:col-span-5
     }
 
     .searchbox {
@@ -41,19 +41,19 @@
     }
 
     .sidebar-item-text {
-        @apply text-xl max-msm:text-base w-[100%]
+        @apply text-xl max-md:text-base w-[100%]
     }
 
     .layout-grid {
-        @apply grid grid-rows-[1fr_auto] max-sm:grid-cols-1 max-msm:grid-cols-1
+        @apply grid grid-rows-[1fr_auto] max-sm:grid-cols-1 max-msm:grid-cols-1 max-xl:grid-cols-[1fr_auto] 2xl:grid-cols-[auto_1fr_1fr_1fr_1fr]
     }
 
     .content-grid {
-        @apply col-span-2 p-4
+        @apply max-xl:col-span-2 p-4 2xl:col-start-3 2xl:col-end-5
     }
 
     .subreddit-title {
-        @apply font-bold text-3xl mb-[2rem] max-msm:text-2xl
+        @apply font-bold text-3xl mb-[2rem] max-msm:text-2xl inline-block
     }
 
     .subreddit-post-title {
@@ -69,7 +69,7 @@
     }
 
     .search-button {
-        @apply w-full bg-slate-800 p-3 rounded-lg hover:bg-slate-700 font-medium text-2xl
+        @apply w-full bg-slate-800 p-3 rounded-lg hover:bg-slate-700 font-medium text-2xl max-msm:mx-3
     }
 
     .search-button-sidebar {
@@ -78,10 +78,39 @@
     /* .modal-style {
         @apply bg-[#1c4845] text-black bottom-0 left-0 right-0 top-0
     } */
+    .dropdown-menu {
+        @apply flex flex-col absolute bg-[#062726] p-2 rounded-md bg-opacity-60
+    }
+
+    .dropdown-menu-hidden {
+        @apply hidden
+    }
+
+    .dropdown-menu-position-responsive {
+        @apply top-[12rem] right-[1rem] max-[390px]:right-[-8rem] max-msm:right-[-6rem] sm:top-[3.5rem] 2xl:right-[20rem] 3xl:right-[22rem] 4xl:right-[27rem]
+    }
+
+    .dropdown-menu-list {
+        @apply flex flex-col gap-4
+    }
+
+    .dropwdown-menu-button {
+        @apply  p-3 rounded-lg max-h-[3rem] cursor-pointer
+    }
+    .dropdown-menu-item {
+        @apply p-1 hover:bg-[#062726b5] hover:bg-opacity-70  cursor-pointer
+    }
+    .social-media-container {
+        @apply flex justify-center gap-8 mt-4
+    }
+    .social-media-item {
+        @apply text-4xl
+    }
+
 }
 
 * {
-    font-family: "Roboto", sans-serif;
+    font-family: monospace, sans-serif;
     font-weight: 100;
     font-style: normal;
 }

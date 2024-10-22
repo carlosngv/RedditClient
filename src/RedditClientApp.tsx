@@ -34,7 +34,7 @@ export const RedditClientApp = () => {
                     Reddit Client
                 </h1>
                 <p
-                    className="text-center max-msm:text-2xl text-4xl"
+                    className="text-center max-msm:text-2xl text-4xl my-2"
                 >
                         By Carlos Ng
                 </p>
@@ -46,6 +46,23 @@ export const RedditClientApp = () => {
                 >Search community</button>
 
                 <InputModal onInputValue={ onInputValue }/>
+
+                <section className="social-media-container">
+                    <a
+                        href="https://github.com/carlosngv/RedditClient"
+                        target="_blank"
+                        className="social-media-item"
+                    >
+                        <i className="fa-brands fa-github"></i>
+                    </a>
+                    <a
+                        href="https://github.com/carlosngv/RedditClient"
+                        target="_blank"
+                        className="social-media-item"
+                    >
+                        <i className="fa-brands fa-linkedin"></i>
+                    </a>
+                </section>
 
             </div>
 

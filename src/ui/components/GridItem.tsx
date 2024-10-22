@@ -5,7 +5,6 @@ interface Props {
 }
 
 export const GridItem = ( { childSubreddit }: Props ) => {
-    console.log({ childSubreddit })
     return (
         <article className="card">
             <h2 className="subreddit-post-title">
@@ -16,7 +15,7 @@ export const GridItem = ( { childSubreddit }: Props ) => {
 
                 { childSubreddit.selftext.length !== 0 ? `${childSubreddit.selftext.substring(0, 100)}...`: '' }
             </p>
-            { childSubreddit.preview && childSubreddit.preview.enabled? (
+            { childSubreddit.preview !== undefined && childSubreddit.preview.enabled? (
                 <div className="subreddit-img-container">
                     <img className="post-img" src={ childSubreddit.url } />
                 </div>

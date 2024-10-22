@@ -13,8 +13,5 @@ export const router = createBrowserRouter([
     path: '/subreddits',
     element: <Layout />,
     errorElement: <ErrorPage />,
-    children: [
-
-    ]
   }
 ]);

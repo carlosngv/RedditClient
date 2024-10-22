@@ -9,6 +9,8 @@ export const Layout = () => {
     const [toggleSidebar, setToggleSidebar] = useState(false);
     const { isLoading, activeSubreddit } = useAppSelector( state => state.subReddits );
 
+
+
     const onToggleSidebar = () => {
         setToggleSidebar( !toggleSidebar );
     }
