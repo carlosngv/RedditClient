@@ -1,9 +1,5 @@
-import { useRouteError } from "react-router-dom";
-
 
 export const ErrorPage = () => {
-
-    const error = useRouteError();
 
     return (
         <div className="h-[100vh] flex flex-col items-center justify-center gap-4">

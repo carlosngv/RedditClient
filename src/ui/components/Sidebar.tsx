@@ -1,7 +1,6 @@
 import { useEffect } from "react";
 import { useAppSelector } from "../../hooks/hooks";
 import { SidebarItem } from "./SidebarItem";
-import { SearchBox } from "../../shared/components/SearchBox";
 import { store } from "../../store/store";
 import { startRedditSearch } from "../../store/subreddits/thunks";
 import { useUiStore } from "../../hooks/useUiStore";

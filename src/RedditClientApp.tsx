@@ -1,5 +1,4 @@
 import { useNavigate } from "react-router-dom"
-import { SearchBox } from "./shared/components/SearchBox"
 import { startRedditSearch } from "./store/subreddits/thunks";
 import { store } from "./store/store";
 import { useUiStore } from "./hooks/useUiStore";

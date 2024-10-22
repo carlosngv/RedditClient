@@ -1,7 +1,7 @@
 
 import subredditApi from "../../helpers/subredditApi";
 import { RedditData, SubredditChildData } from "../../interfaces/subreddit.interface";
-import { AppDispatch, RootState } from "../store";
+import { AppDispatch } from "../store";
 import { addingNewSubreddit, addSubreddit, capturingSubredditError, setActiveSubreddit } from "./subredditsSlice"
 
 

@@ -1,6 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { SubredditChildData } from '../../interfaces/subreddit.interface';
-import { useNavigate } from 'react-router-dom';
 
 
 export interface Subreddit {
