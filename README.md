@@ -5,4 +5,5 @@ Browser based Reddit client that displays multiple subreddits. This project uses
 React application working in Vite and Redux-Toolkit, and Tailwind CSS for styling purposes.
 
 You can check the demo in this link: https://reddit-client-8igi.vercel.app/
+<br>
 Project based on: https://roadmap.sh/projects/reddit-client
