@@ -37,7 +37,7 @@ export const RedditClientApp = () => {
                     <p
                         className="text-center max-msm:text-2xl text-4xl my-2"
                     >
-                            By Carlos Ng
+                            By Carlos Ng :)
                     </p>
 
                     {/* <SearchBox onInputValue={ onInputValue } searchboxClass={ 'searchbox' } /> */}
